@@ -171,9 +171,7 @@ $(function () {
     });
 
 });
-// ---------- o'clock -----------
-const currentYear = new Date().getFullYear();
-document.getElementById('year').innerHTML = currentYear;
+
 // ---------- hover dropdown -----------
 const $dropdown = $(".dropdown");
 const $dropdownToggle = $(".dropdown-toggle");
@@ -1154,6 +1152,12 @@ $(document).ready(function () {
     });
 
 });
+// ---------- o'clock -----------
+// let year = $('#year');
+// const date = new Date().getFullYear();
+// console.log(date);
+// year.innerHTML = date;
+// console.log(year);
 
 
 /* ===============================  Preloader page  =============================== */
