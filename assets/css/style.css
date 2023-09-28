@@ -65,11 +65,15 @@ TABLE OF CONTENTS:-
 ================================================================*/
 /* --------------- variable --------------- */
 :root {
+  --padding-0: 0;
+
   --color-main: #0066ff;
   --color-primary: #0066ff;
   --color-secondary: #02b5ff;
-  --color-blue2: #4a00e1;
-  --color-blue4: #5842bc;
+  --color-main-purple: #454ADE;
+  --color-blue1: #3464B6;
+  --color-blue2: #404398;
+  --color-blue4: #333C87;
   --color-blue5: #157efb;
   --color-blue6: #6640f4;
   --color-blue7: #8169f1;
@@ -2125,13 +2129,20 @@ small.text {
   color: #000;
 }
 
+.flipedShowProject {
+  box-shadow: 10px 10px 0px 8px var(--color-main-purple), 5px 25px 9px 7px var(--color-main-purple), 15px 20px 10px 0px var(--color-main-purple);
+  transform: skew(-20deg, 0deg) rotateX(0deg) rotateY(-10deg);
+  border-radius: 0px 18px 10px 10px;
+  width: 10rem;
+}
+
 .section-head.style-4 h2 span {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: -webkit-gradient(linear, right top, left top, from(#501e9c), color-stop(30%, #8169f1), color-stop(30%, #8169f1), color-stop(73%, #a44cee), to(#ff847f));
-  background-image: -webkit-linear-gradient(right, #501e9c 0%, #8169f1 30%, #8169f1 30%, #a44cee 73%, #ff847f 100%);
-  background-image: -o-linear-gradient(right, #501e9c 0%, #8169f1 30%, #8169f1 30%, #a44cee 73%, #ff847f 100%);
-  background-image: linear-gradient(to left, #501e9c 0%, #8169f1 30%, #8169f1 30%, #a44cee 73%, #ff847f 100%);
+  background-image: -webkit-linear-gradient(right, var(--color-blue2) 0%, var(--color-blue4) 30%, #501e9c 73%, #a44cee 100%);
+  background-image: -o-linear-gradient(right, var(--color-blue2) 0%, var(--color-blue4) 30%, #501e9c 73%, #a44cee 100%);
+  background-image: linear-gradient(to left, var(--color-blue2) 0%, var(--color-blue4) 30%, #501e9c 73%, #a44cee 100%);
 }
 
 .section-head.style-4 h5 {
@@ -2954,12 +2965,12 @@ small.text {
 }
 
 .navbar.style-3 {
-  background-color: #4A00E1;
+  background-color: var(--color-blue1);
   padding: 20px 0;
 }
 
 .navbar.style-3.nav-scroll {
-  background-color: #4A00E1 !important;
+  background-color: var(--color-blue1) !important;
 }
 
 .navbar.style-3 .navbar-brand img {
