@@ -2820,6 +2820,10 @@ small.text {
   border-left: 1px solid #9993;
 }
 
+.nav-side {
+  display: none;
+}
+
 .navbar.style-1 .nav-side .hotline .icon {
   width: 40px;
   height: 40px;
