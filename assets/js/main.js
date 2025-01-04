@@ -118,8 +118,6 @@ $(function () {
     })
 
 
-
-
     // -------- counter --------
     $('.counter').countUp({
         delay: 10,
@@ -1152,26 +1150,3 @@ $(document).ready(function () {
     });
 
 });
-// ---------- o'clock -----------
-// let year = $('#year');
-// const date = new Date().getFullYear();
-// console.log(date);
-// year.innerHTML = date;
-// console.log(year);
-
-
-/* ===============================  Preloader page  =============================== */
-// $( function() {
-
-//     paceOptions = {
-//         ajax: true,
-//         document: true,
-//         eventLag: false
-//     };
-
-//     Pace.on('done', function () {
-//         $('#preloader').addClass("isdone");
-//         $('.loading').addClass("isdone");
-//     });
-//   } );
-
