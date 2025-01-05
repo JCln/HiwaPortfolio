@@ -26,3 +26,20 @@ function includeHTML() {
     }
 }
 includeHTML();
+// include external js files
+document.writeln("<script type='text/javascript' src='assets/js/lib/jquery-3.0.0.min.js' defer></script>");
+document.writeln("<script type='text/javascript' src='assets/js/lib/jquery-migrate-3.0.0.min.js' defer></script>");
+document.writeln("<script type='text/javascript' src='assets/js/main.js' defer></script>");
+document.writeln("<script type='text/javascript' src='assets/js/lib/bootstrap.bundle.min.js' defer></script>");
+document.writeln("<script type='text/javascript' src='assets/js/lib/wow.min.js' defer></script>");
+document.writeln("<script type='text/javascript' src='assets/js/lib/jquery.fancybox.js' defer></script>");
+document.writeln("<script type='text/javascript' src='assets/js/lib/lity.js' defer></script>");
+document.writeln("<script type='text/javascript' src='assets/js/lib/swiper.min.js' defer></script>");
+document.writeln("<script type='text/javascript' src='assets/js/lib/jquery.waypoints.min.js' defer></script>");
+document.writeln("<script type='text/javascript' src='assets/js/lib/jquery.counterup.js' defer></script>");
+document.writeln("<script type='text/javascript' src='assets/js/lib/pace.js' defer></script>");
+document.writeln("<script type='text/javascript' src='assets/js/lib/scrollIt.min.js' defer></script>");
+document.writeln("<script type='text/javascript' src='assets/js/main.js' defer></script>");
+document.writeln("<script type='text/javascript' src='assets/js/mainpageUsers.js' defer></script>");
+document.writeln("<script type='text/javascript' src='assets/js/ourTeam.js' defer></script>");
+document.writeln("<script type='text/javascript' src='assets/js/today.js' defer></script>");

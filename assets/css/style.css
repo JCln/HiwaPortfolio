@@ -72,11 +72,13 @@ TABLE OF CONTENTS:-
   --color-secondary: #02b5ff;
   --color-main-purple: #454ADE;
   --color-blue1: #3464B6;
-  --color-blue2: #404398;
-  --color-blue4: #333C87;
+  --color-blue2: #2D579F;
+  --color-blue4: #24457F;
   --color-blue5: #157efb;
   --color-blue6: #6640f4;
   --color-blue7: #8169f1;
+  --color-blue-l: #0066ff;
+  --color-blue-l2: #0066ff;
   --color-lightBlue: #15f1ff;
   --color-darkBlue: #010049;
   --color-darkBlue2: #1f227d;
@@ -472,10 +474,10 @@ body.style-6 {
 
 .home-style-7 #preloader:after,
 .home-style-7 #preloader:before {
-  background: -webkit-gradient(linear, left top, right top, from(#501e9c), color-stop(30%, #8169f1), color-stop(30%, #8169f1), color-stop(73%, #a44cee), to(#ff847f));
-  background: -webkit-linear-gradient(left, #501e9c 0%, #8169f1 30%, #8169f1 30%, #a44cee 73%, #ff847f 100%);
-  background: -o-linear-gradient(left, #501e9c 0%, #8169f1 30%, #8169f1 30%, #a44cee 73%, #ff847f 100%);
-  background: linear-gradient(to right, #501e9c 0%, #8169f1 30%, #8169f1 30%, #a44cee 73%, #ff847f 100%);
+  background: -webkit-gradient(linear, left top, right top, from(var(--color-blue-l2)), color-stop(30%, #8169f1), color-stop(30%, #8169f1), color-stop(73%, var(--color-blue-l)), to(#ff847f));
+  background: -webkit-linear-gradient(left, var(--color-blue-l2) 0%, #8169f1 30%, #8169f1 30%, var(--color-blue-l) 73%, #ff847f 100%);
+  background: -o-linear-gradient(left, var(--color-blue-l2) 0%, #8169f1 30%, #8169f1 30%, var(--color-blue-l) 73%, #ff847f 100%);
+  background: linear-gradient(to right, var(--color-blue-l2) 0%, #8169f1 30%, #8169f1 30%, var(--color-blue-l) 73%, #ff847f 100%);
 }
 
 .home-style-8 {
@@ -1702,8 +1704,11 @@ small.text {
 .img-cover img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
+}
+
+.img-default {
+  min-height: 90%;
 }
 
 .img-contain {
@@ -2139,16 +2144,16 @@ small.text {
 .section-head.style-4 h2 span {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: -webkit-gradient(linear, right top, left top, from(#501e9c), color-stop(30%, #8169f1), color-stop(30%, #8169f1), color-stop(73%, #a44cee), to(#ff847f));
-  background-image: -webkit-linear-gradient(right, var(--color-blue2) 0%, var(--color-blue4) 30%, #501e9c 73%, #a44cee 100%);
-  background-image: -o-linear-gradient(right, var(--color-blue2) 0%, var(--color-blue4) 30%, #501e9c 73%, #a44cee 100%);
-  background-image: linear-gradient(to left, var(--color-blue2) 0%, var(--color-blue4) 30%, #501e9c 73%, #a44cee 100%);
+  background-image: -webkit-gradient(linear, right top, left top, from(var(--color-blue-l2)), color-stop(30%, #8169f1), color-stop(30%, #8169f1), color-stop(73%, var(--color-blue-l)), to(#ff847f));
+  background-image: -webkit-linear-gradient(right, var(--color-blue2) 0%, var(--color-blue4) 30%, var(--color-blue-l2) 73%, var(--color-blue-l) 100%);
+  background-image: -o-linear-gradient(right, var(--color-blue2) 0%, var(--color-blue4) 30%, var(--color-blue-l2) 73%, var(--color-blue-l) 100%);
+  background-image: linear-gradient(to left, var(--color-blue2) 0%, var(--color-blue4) 30%, var(--color-blue-l2) 73%, var(--color-blue-l) 100%);
 }
 
 .section-head.style-4 h5 {
   font-size: 16px;
   font-weight: bold;
-  color: #a44cee;
+  color: var(--color-blue-l);
   display: inline-block;
   text-transform: capitalize;
   margin: 0 10px;
@@ -3908,10 +3913,10 @@ header.style-4 .content .info h1 {
 header.style-4 .content .info h1 span {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: -webkit-gradient(linear, right top, left top, from(#501e9c), color-stop(30%, #8169f1), color-stop(30%, #8169f1), color-stop(73%, #a44cee), to(#ff847f));
-  background-image: -webkit-linear-gradient(right, #501e9c 0%, #8169f1 30%, #8169f1 30%, #a44cee 73%, #ff847f 100%);
-  background-image: -o-linear-gradient(right, #501e9c 0%, #8169f1 30%, #8169f1 30%, #a44cee 73%, #ff847f 100%);
-  background-image: linear-gradient(to left, #501e9c 0%, #8169f1 30%, #8169f1 30%, #a44cee 73%, #ff847f 100%);
+  background-image: -webkit-gradient(linear, right top, left top, from(var(--color-blue-l2)), color-stop(30%, #8169f1), color-stop(30%, #8169f1), color-stop(73%, var(--color-blue-l)), to(#ff847f));
+  background-image: -webkit-linear-gradient(right, var(--color-blue-l2) 0%, #8169f1 30%, #8169f1 30%, var(--color-blue-l) 73%, #ff847f 100%);
+  background-image: -o-linear-gradient(right, var(--color-blue-l2) 0%, #8169f1 30%, #8169f1 30%, var(--color-blue-l) 73%, #ff847f 100%);
+  background-image: linear-gradient(to left, var(--color-blue-l2) 0%, #8169f1 30%, #8169f1 30%, var(--color-blue-l) 73%, #ff847f 100%);
 }
 
 header.style-4 .content .info .text {
@@ -4306,10 +4311,10 @@ header.style-7 .info h1 .num {
 header.style-7 .info h1 .text-grad {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: -webkit-gradient(linear, right top, left top, from(#501e9c), color-stop(30%, #8169f1), color-stop(30%, #8169f1), color-stop(73%, #a44cee), to(#ff847f));
-  background-image: -webkit-linear-gradient(right, #501e9c 0%, #8169f1 30%, #8169f1 30%, #a44cee 73%, #ff847f 100%);
-  background-image: -o-linear-gradient(right, #501e9c 0%, #8169f1 30%, #8169f1 30%, #a44cee 73%, #ff847f 100%);
-  background-image: linear-gradient(to left, #501e9c 0%, #8169f1 30%, #8169f1 30%, #a44cee 73%, #ff847f 100%);
+  background-image: -webkit-gradient(linear, right top, left top, from(var(--color-blue-l2)), color-stop(30%, #8169f1), color-stop(30%, #8169f1), color-stop(73%, var(--color-blue-l)), to(#ff847f));
+  background-image: -webkit-linear-gradient(right, var(--color-blue-l2) 0%, #8169f1 30%, #8169f1 30%, var(--color-blue-l) 73%, #ff847f 100%);
+  background-image: -o-linear-gradient(right, var(--color-blue-l2) 0%, #8169f1 30%, #8169f1 30%, var(--color-blue-l) 73%, #ff847f 100%);
+  background-image: linear-gradient(to left, var(--color-blue-l2) 0%, #8169f1 30%, #8169f1 30%, var(--color-blue-l) 73%, #ff847f 100%);
 }
 
 header.style-7 .img {
@@ -7534,7 +7539,7 @@ header.style-15 .countdown-content .logos img {
 }
 
 .project-card.style-7 .info h6 {
-  color: #a44cee;
+  color: var(--color-blue-l);
   font-weight: 400;
   margin-bottom: 10px;
 }
@@ -11577,10 +11582,10 @@ header.style-15 .countdown-content .logos img {
   font-size: 60px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: -webkit-gradient(linear, right top, left top, from(#501e9c), color-stop(30%, #8169f1), color-stop(30%, #8169f1), color-stop(73%, #a44cee), to(#ff847f));
-  background-image: -webkit-linear-gradient(right, #501e9c 0%, #8169f1 30%, #8169f1 30%, #a44cee 73%, #ff847f 100%);
-  background-image: -o-linear-gradient(right, #501e9c 0%, #8169f1 30%, #8169f1 30%, #a44cee 73%, #ff847f 100%);
-  background-image: linear-gradient(to left, #501e9c 0%, #8169f1 30%, #8169f1 30%, #a44cee 73%, #ff847f 100%);
+  background-image: -webkit-gradient(linear, right top, left top, from(var(--color-blue-l2)), color-stop(30%, #8169f1), color-stop(30%, #8169f1), color-stop(73%, var(--color-blue-l)), to(#ff847f));
+  background-image: -webkit-linear-gradient(right, var(--color-blue-l2) 0%, #8169f1 30%, #8169f1 30%, var(--color-blue-l) 73%, #ff847f 100%);
+  background-image: -o-linear-gradient(right, var(--color-blue-l2) 0%, #8169f1 30%, #8169f1 30%, var(--color-blue-l) 73%, #ff847f 100%);
+  background-image: linear-gradient(to left, var(--color-blue-l2) 0%, #8169f1 30%, #8169f1 30%, var(--color-blue-l) 73%, #ff847f 100%);
 }
 
 .community.style-4 .content .commun-card .inf h5 {
