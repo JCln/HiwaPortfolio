@@ -19,7 +19,7 @@ getTeamMemberHtml = (imgSrc, title, position, linkedIn) => {
                 <img class="img-default" src="${imgSrc}" alt="">
                         <div class="social-icons">
                         ${linkedIn.length > 0 && linkedIn !== null ? `
-                            <a href=${linkedIn}>
+                            <a href=${linkedIn} target="_blank">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>`
             : ``}                        

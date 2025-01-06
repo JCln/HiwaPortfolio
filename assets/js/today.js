@@ -1,15 +1,11 @@
 // -------- set Date --------
-const fullYear = document.getElementById('year');
-const date = new Date().getFullYear();
-console.log(date);
-
-fullYear = () => {
-    return date;
+function setYear() {
+    const fullYear = document.getElementById('year');
+    const date = new Date().getFullYear();
+    fullYear.innerHTML = date;
 }
-setYear = () => {
-    setTimeout(() => {
-        fullYear.innerHTML = fullYear();
-    }, 2000);
-}
-setYear();
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('The page has loaded!');
+    setYear();
+});
 // -------- End set Date --------
