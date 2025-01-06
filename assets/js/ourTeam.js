@@ -1,9 +1,9 @@
 users = () => {
     return [
-        { imgSrc: 'assets/img/team/CTO.jpg', title: 'اصغر غریبی', position: 'Founder', linkedIn: null },
-        { imgSrc: 'assets/img/team/back.jpg', title: 'سپهر', position: 'Principal Full-stack Developer', linkedIn: '' },
-        { imgSrc: 'assets/img/team/Android.jpg', title: 'علی', position: 'Senior Android Developer', linkedIn: '' },
-        { imgSrc: 'assets/img/team/front.jpg', title: 'محمد', position: 'Senior Front-End Developer', linkedIn: '' },
+        { imgSrc: 'assets/img/team/CTO.jpg', title: 'اصغر غریبی', position: 'Founder', linkedIn: '' },
+        { imgSrc: 'assets/img/team/back.jpg', title: 'سپهر', position: 'Principal Full-stack Developer', linkedIn: 'https://www.linkedin.com/in/sepehr-shamsaii-21668884/' },
+        { imgSrc: 'assets/img/team/Android.jpg', title: 'علی', position: 'Senior Android Developer', linkedIn: 'https://www.linkedin.com/in/iamalirostami/' },
+        { imgSrc: 'assets/img/team/front.jpg', title: 'محمد', position: 'Senior Front-End Developer', linkedIn: 'https://www.linkedin.com/in/mohamad-gharibi/' },
         { imgSrc: 'assets/img/team/Designer.jpg', title: 'مریم', position: 'Designer', linkedIn: '' },
         { imgSrc: 'assets/img/team/womanuser.jpg', title: 'خانم محمدی', position: 'Accounter', linkedIn: '' },
         { imgSrc: 'assets/img/team/womanuser.jpg', title: 'نیلوفر', position: 'Consulter', linkedIn: '' },
@@ -18,10 +18,11 @@ getTeamMemberHtml = (imgSrc, title, position, linkedIn) => {
             <div class="img">
                 <img class="img-default" src="${imgSrc}" alt="">
                         <div class="social-icons">
-                        
+                        ${linkedIn.length > 0 && linkedIn !== null ? `
                             <a href=${linkedIn}>
                                 <i class="fab fa-linkedin-in"></i>
-                            </a>
+                            </a>`
+            : ``}                        
                         </div>
             </div>
             <div class="info">
@@ -37,17 +38,15 @@ getTeamMemberHtml = (imgSrc, title, position, linkedIn) => {
 (function (window, document, undefined) {
 
     // code that should be taken care of right away
-
     window.onload = initial;
 
     function initial() {
         const teamMembers = users();
+
         for (let index = 0; index < teamMembers.length; index++) {
             let teamMember = teamMembers[index];
             let newMemberElement = getTeamMemberHtml(teamMember.imgSrc, teamMember.title, teamMember.position, teamMember.linkedIn);
             let div = document.getElementById('members');
-            console.log(newMemberElement);
-
             div.insertAdjacentHTML('beforeend', newMemberElement);
         }
     }
