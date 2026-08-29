@@ -2,12 +2,12 @@ users = () => {
     return [
         { imgSrc: 'assets/img/team/CTO.jpg', title: 'اصغر غریبی', position: 'Founder', linkedIn: '' },
         { imgSrc: 'assets/img/team/back.jpg', title: 'سپهر', position: 'Principal Full-stack Developer', linkedIn: 'https://www.linkedin.com/in/sepehr-shamsaii-21668884/' },
-        { imgSrc: 'assets/img/team/Android.jpg', title: 'علی', position: 'Senior Android Developer', linkedIn: 'https://www.linkedin.com/in/iamalirostami/' },
         { imgSrc: 'assets/img/team/front.jpg', title: 'محمد', position: 'Senior Front-End Developer', linkedIn: 'https://www.linkedin.com/in/mohamad-gharibi/' },
+        { imgSrc: 'assets/img/team/womanuser.jpg', title: 'خانم اتحادی', position: 'Back-End Developer', linkedIn: 'https://www.linkedin.com/in/zahra-etehadi-080982312/' },
+        { imgSrc: 'assets/img/team/matin.png', title: 'متین', position: 'Android (Kotlin) Developer', linkedIn: 'https://www.linkedin.com/in/matin-analo-0b97b1337/' },        
+        { imgSrc: 'assets/img/team/reza.jpg', title: 'رضا', position: 'Front-End Developer', linkedIn: 'https://www.linkedin.com/in/reza-kiani-b6272839b/' },
         { imgSrc: 'assets/img/team/Designer.jpg', title: 'مریم', position: 'Designer', linkedIn: '' },
-        { imgSrc: 'assets/img/team/womanuser.jpg', title: 'خانم محمدی', position: 'Accounter', linkedIn: '' },
-        { imgSrc: 'assets/img/team/womanuser.jpg', title: 'نیلوفر', position: 'Consulter', linkedIn: '' },
-        { imgSrc: 'assets/img/team/manuser.jpg', title: 'علی', position: 'Junior Back-End Developer', linkedIn: '' },
+        { imgSrc: 'assets/img/team/womanuser.jpg', title: 'نیلوفر', position: 'Consulter', linkedIn: '' },    
     ]
 }
 
