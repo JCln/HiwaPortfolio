@@ -411,38 +411,7 @@ $(document).ready(function () {
         }
     });
 
-    // ------------ works sliders -----------
-    var swiper = new Swiper('.screenshots-slider.style-4 .swiper-container', {
-        slidesPerView: 5,
-        spaceBetween: 0,
-        centeredSlides: true,
-        speed: 1000,
-        pagination: false,
-        navigation: false,
-        mousewheel: false,
-        keyboard: true,
-        autoplay: {
-            delay: 4000,
-        },
-        loop: true,
-        breakpoints: {
-            0: {
-                slidesPerView: 2,
-            },
-            480: {
-                slidesPerView: 2,
-            },
-            787: {
-                slidesPerView: 3,
-            },
-            991: {
-                slidesPerView: 3,
-            },
-            1200: {
-                slidesPerView: 5,
-            }
-        }
-    });
+    initScreenshotsSlider();
 
     // ------------ clients sliders -----------
     let SwiperBottom = new Swiper('.clients-slider5 .swiper-container', {
@@ -474,6 +443,30 @@ $(document).ready(function () {
             }
         }
     });
+
+    function initScreenshotsSlider() {
+        var container = document.querySelector('.screenshots-slider.style-4 .swiper-container');
+
+        if (!container || container.swiper) {
+            return;
+        }
+
+        new Swiper(container, {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            speed: 1000,
+            pagination: false,
+            navigation: false,
+            mousewheel: false,
+            keyboard: true,
+            autoplay: {
+                delay: 4000,
+            },
+            loop: true
+        });
+    }
+
+    document.addEventListener("includesLoaded", initScreenshotsSlider);
 
     // ------------ testimonial sliders -----------
     var swiper = new Swiper('.testimonial-slider.style-5 .swiper-container', {
