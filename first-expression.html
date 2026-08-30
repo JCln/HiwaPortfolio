@@ -15,10 +15,11 @@
                                 با ما تماس بگیرید و یا ایمیل ارسال فرمایید
                             </span>
                         </h5>
-                        <form class="form mt-30" action="https://formsubmit.co/ghmantera@gmail.com" method="POST">
+                        <form id="consultation-form" class="form mt-30" action="https://formsubmit.co/ghmantera@gmail.com" method="POST">
                             <input type="hidden" name="_subject" value="درخواست مشاوره جدید از سایت هیوا">
                             <input type="hidden" name="_captcha" value="false">
                             <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_next" value="thank-you.html">
                             <div class="row gx-3">
                                 <div class="col-6">
                                     <div class="form-group input-with-icon">
@@ -55,3 +56,53 @@
         <img src="assets/img/logo.png" alt="" class="logo_shap">
     </div>
 </header>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('consultation-form');
+        if (!form) return;
+
+        form.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const button = form.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+            const statusMessage = document.createElement('div');
+            statusMessage.className = 'alert mt-3 mb-0';
+            statusMessage.style.borderRadius = '12px';
+
+            button.disabled = true;
+            button.innerHTML = 'در حال ارسال...';
+
+            const data = Object.fromEntries(new FormData(form).entries());
+            const endpoint = form.action.replace('https://formsubmit.co/', 'https://formsubmit.co/ajax/');
+
+            try {
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Request failed');
+                }
+
+                form.reset();
+                form.style.display = 'none';
+                statusMessage.classList.add('alert-success');
+                statusMessage.textContent = 'پیام شما با موفقیت ارسال شد. با شما تماس خواهیم گرفت.';
+                form.insertAdjacentElement('afterend', statusMessage);
+            } catch (error) {
+                statusMessage.classList.add('alert-danger');
+                statusMessage.textContent = 'ارسال پیام ناموفق بود. لطفاً دوباره تلاش کنید.';
+                form.insertAdjacentElement('afterend', statusMessage);
+            } finally {
+                button.disabled = false;
+                button.innerHTML = originalText;
+            }
+        });
+    });
+</script>

@@ -66,10 +66,11 @@
                 <div class="content">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
-                            <form action="https://formsubmit.co/ghmantera@gmail.com" class="form" method="POST">
+                            <form id="contact-form" action="https://formsubmit.co/ghmantera@gmail.com" class="form" method="POST">
                                 <input type="hidden" name="_subject" value="پیام جدید از فرم تماس هیوا">
                                 <input type="hidden" name="_captcha" value="false">
                                 <input type="hidden" name="_template" value="table">
+                                <input type="hidden" name="_next" value="thank-you.html">
                                 <p class="text-center text-danger fs-12px mb-30">فیلد های ستاره دار الزامی هستند</p>
                                 <div class="row">
                                     <div class="col-lg-6">
@@ -140,6 +141,56 @@
 
     <!-- ====== request ====== -->
     <script src="assets/js/include.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('contact-form');
+            if (!form) return;
+
+            form.addEventListener('submit', async function (event) {
+                event.preventDefault();
+
+                const button = form.querySelector('button[type="submit"]');
+                const originalText = button.innerHTML;
+                const statusMessage = document.createElement('div');
+                statusMessage.className = 'alert mt-3 mb-0';
+                statusMessage.style.borderRadius = '12px';
+
+                button.disabled = true;
+                button.innerHTML = 'در حال ارسال...';
+
+                const data = Object.fromEntries(new FormData(form).entries());
+                const endpoint = form.action.replace('https://formsubmit.co/', 'https://formsubmit.co/ajax/');
+
+                try {
+                    const response = await fetch(endpoint, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Request failed');
+                    }
+
+                    form.reset();
+                    form.style.display = 'none';
+                    statusMessage.classList.add('alert-success');
+                    statusMessage.textContent = 'پیام شما با موفقیت ارسال شد. با شما تماس خواهیم گرفت.';
+                    form.insertAdjacentElement('afterend', statusMessage);
+                } catch (error) {
+                    statusMessage.classList.add('alert-danger');
+                    statusMessage.textContent = 'ارسال پیام ناموفق بود. لطفاً دوباره تلاش کنید.';
+                    form.insertAdjacentElement('afterend', statusMessage);
+                } finally {
+                    button.disabled = false;
+                    button.innerHTML = originalText;
+                }
+            });
+        });
+    </script>
 
 </body>
 
