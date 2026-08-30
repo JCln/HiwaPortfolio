@@ -16,6 +16,9 @@ function includeHTML() {
                     /* Remove the attribute, and call this function once more: */
                     elmnt.removeAttribute("w3-include-html");
                     includeHTML();
+                    if (!document.querySelector("[w3-include-html]")) {
+                        document.dispatchEvent(new Event("includesLoaded"));
+                    }
                 }
             }
             xhttp.open("GET", file, true);
@@ -29,7 +32,6 @@ includeHTML();
 // include external js files
 document.writeln("<script type='text/javascript' src='assets/js/lib/jquery-3.0.0.min.js' defer></script>");
 document.writeln("<script type='text/javascript' src='assets/js/lib/jquery-migrate-3.0.0.min.js' defer></script>");
-document.writeln("<script type='text/javascript' src='assets/js/main.js' defer></script>");
 document.writeln("<script type='text/javascript' src='assets/js/lib/bootstrap.bundle.min.js' defer></script>");
 document.writeln("<script type='text/javascript' src='assets/js/lib/wow.min.js' defer></script>");
 document.writeln("<script type='text/javascript' src='assets/js/lib/jquery.fancybox.js' defer></script>");

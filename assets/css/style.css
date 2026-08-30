@@ -11758,14 +11758,18 @@ header.style-15 .countdown-content .logos img {
 .screenshots.style-4 .screenshots-slider {
   position: absolute;
   top: 110px;
-  width: calc(100% + 120px);
-  right: 95px;
+  right: 0;
+  width: 100%;
+  -webkit-transform: translateX(-75px);
+  -ms-transform: translateX(-75px);
+  transform: translateX(-75px);
+  z-index: 1;
 }
 
 .screenshots.style-4 .screenshots-slider .img {
   margin: 0 auto;
-  height: 420px;
   width: 190px;
+  height: 420px;
 }
 
 .screenshots.style-4 .screenshots-slider .img img {
@@ -11779,12 +11783,15 @@ header.style-15 .countdown-content .logos img {
 .screenshots.style-4 .mob-hand {
   pointer-events: none;
   position: absolute;
-  right: 50%;
+  left: 50%;
+  right: auto;
   bottom: 0;
-  -webkit-transform: translateX(33%);
-  -ms-transform: translateX(33%);
-  transform: translateX(33%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   height: 600px;
+  width: auto;
+  max-width: none;
   z-index: 10;
 }
 
@@ -18486,6 +18493,7 @@ footer.style-15 .foot p {
   .screenshots.style-4 .screenshots-slider .img {
     margin: 0 auto;
     width: 190px;
+    height: 420px;
   }
 }
 
@@ -19091,6 +19099,7 @@ footer.style-15 .foot p {
   .screenshots.style-4 .screenshots-slider .img {
     margin: 0 auto;
     width: 190px;
+    height: 420px;
   }
 
   footer.style-4 .foot .logo {
