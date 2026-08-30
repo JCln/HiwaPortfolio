@@ -55,54 +55,55 @@
         <section class="contact section-padding pt-50 style-6">
             <div class="container">
                 <div class="section-head text-center mt-100 mb-100 style-5">
-                    <h2 class="mb-20">با ما در تماس <span> باشید </span> </h2>
-                    <p>توسعه، پشتیبانی و مشاوره نرم افزار</p>
+                    <h2 class="mb-20"><span data-i18n="contact.title">با ما در تماس</span> <span data-i18n="contact.title2">باشید</span></h2>
+                    <p data-i18n="contact.subtitle">توسعه، پشتیبانی و مشاوره نرم افزار</p>
                 </div>
                 <div class="text-center mb-100">
-                    <h2 class="ltspc-20 text-uppercase fs-1 lh-1 mb-50 mt-30 color-blue5">031-32121764</h2>
-                    <h4 class="fw-normal mb-20 color-000">info@hiwapardaz.ir</h4>
-                    <h4 class="fw-normal mb-10 color-000">ایران - اصفهان</h4>
+                    <h2 class="ltspc-20 text-uppercase fs-1 lh-1 mb-50 mt-30 color-blue5" data-i18n="contact.phone.display">031-32121764</h2>
+                    <h4 class="fw-normal mb-20 color-000" data-i18n="contact.email.address">info@hiwapardaz.ir</h4>
+                    <h4 class="fw-normal mb-10 color-000" data-i18n="contact.location">ایران - اصفهان</h4>
                 </div>
                 <div class="content">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
-                            <form action="https://formsubmit.co/ghmantera@gmail.com" class="form" method="POST">
+                            <form id="contact-form" action="https://formsubmit.co/ghmantera@gmail.com" class="form" method="POST">
                                 <input type="hidden" name="_subject" value="پیام جدید از فرم تماس هیوا">
                                 <input type="hidden" name="_captcha" value="false">
                                 <input type="hidden" name="_template" value="table">
-                                <p class="text-center text-danger fs-12px mb-30">فیلد های ستاره دار الزامی هستند</p>
+                                <input type="hidden" name="_next" value="thank-you.html">
+                                <p class="text-center text-danger fs-12px mb-30" data-i18n="contact.required">فیلد های ستاره دار الزامی هستند</p>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group mb-20">
-                                            <input type="text" name="name" class="form-control" placeholder="نام *" required>
+                                            <input type="text" name="name" class="form-control" data-i18n-placeholder="contact.name" placeholder="نام *" required>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group mb-20">
-                                            <input type="email" name="email" class="form-control" placeholder="ایمیل *" required>
+                                            <input type="email" name="email" class="form-control" data-i18n-placeholder="contact.email" placeholder="ایمیل *" required>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group mb-20">
-                                            <input type="tel" name="phone" class="form-control" placeholder="شماره تماس (اختیاری)">
+                                            <input type="tel" name="phone" class="form-control" data-i18n-placeholder="contact.phone" placeholder="شماره تماس (اختیاری)">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group mb-20">
-                                            <input type="text" name="website" class="form-control" placeholder="وب سایت شما (اختیاری)">
+                                            <input type="text" name="website" class="form-control" data-i18n-placeholder="contact.website" placeholder="وب سایت شما (اختیاری)">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <textarea name="message" rows="10" class="form-control" placeholder="در چه زمینه ای نیاز به همفکری دارید؟ *" required></textarea>
+                                            <textarea name="message" rows="10" class="form-control" data-i18n-placeholder="contact.message" placeholder="در چه زمینه ای نیاز به همفکری دارید؟ *" required></textarea>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 text-center mt-30 mb-30">
-
+ 
                                     </div>
                                     <div class="col-lg-12 text-center">
                                         <button type="submit" class="btn rounded-pill blue5-3Dbutn hover-blue2 sm-butn fw-bold">
-                                            <span>ثبت درخواست </span>
+                                            <span data-i18n="contact.submit">ثبت درخواست </span>
                                         </button>
                                     </div>
                                 </div>
@@ -140,6 +141,62 @@
 
     <!-- ====== request ====== -->
     <script src="assets/js/include.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('contact-form');
+            if (!form) return;
+
+            const lang = localStorage.getItem('siteLang') || 'fa';
+            const sendingLabel = lang === 'en' ? 'Sending...' : 'در حال ارسال...';
+            const successLabel = lang === 'en' ? 'Your message was sent successfully. We will contact you soon.' : 'پیام شما با موفقیت ارسال شد. با شما تماس خواهیم گرفت.';
+            const errorLabel = lang === 'en' ? 'Sending failed. Please try again.' : 'ارسال پیام ناموفق بود. لطفاً دوباره تلاش کنید.';
+
+            form.addEventListener('submit', async function (event) {
+                event.preventDefault();
+
+                const button = form.querySelector('button[type="submit"]');
+                const originalText = button.innerHTML;
+                const statusMessage = document.createElement('div');
+                statusMessage.className = 'alert mt-3 mb-0';
+                statusMessage.style.borderRadius = '12px';
+
+                button.disabled = true;
+                button.innerHTML = sendingLabel;
+
+                const data = Object.fromEntries(new FormData(form).entries());
+                const endpoint = form.action.replace('https://formsubmit.co/', 'https://formsubmit.co/ajax/');
+
+                try {
+                    const response = await fetch(endpoint, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Request failed');
+                    }
+
+                    form.reset();
+                    form.style.display = 'none';
+                    statusMessage.classList.add('alert-success');
+                    statusMessage.textContent = successLabel;
+                    form.insertAdjacentElement('afterend', statusMessage);
+                } catch (error) {
+                    statusMessage.classList.add('alert-danger');
+                    statusMessage.textContent = errorLabel;
+                    form.insertAdjacentElement('afterend', statusMessage);
+                } finally {
+                    button.disabled = false;
+                    button.innerHTML = originalText;
+                }
+            });
+        });
+    </script>
 
 </body>
 

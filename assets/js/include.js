@@ -41,6 +41,7 @@ document.writeln("<script type='text/javascript' src='assets/js/lib/jquery.waypo
 document.writeln("<script type='text/javascript' src='assets/js/lib/jquery.counterup.js' defer></script>");
 document.writeln("<script type='text/javascript' src='assets/js/lib/pace.js' defer></script>");
 document.writeln("<script type='text/javascript' src='assets/js/lib/scrollIt.min.js' defer></script>");
+document.writeln("<script type='text/javascript' src='assets/js/i18n.js' defer></script>");
 document.writeln("<script type='text/javascript' src='assets/js/main.js' defer></script>");
 document.writeln("<script type='text/javascript' src='assets/js/ourTeam.js' defer></script>");
 document.writeln("<script type='text/javascript' src='assets/js/today.js' defer></script>");

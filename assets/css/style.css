@@ -67,21 +67,21 @@ TABLE OF CONTENTS:-
 :root {
   --padding-0: 0;
 
-  --color-main: #0066ff;
-  --color-primary: #0066ff;
-  --color-secondary: #02b5ff;
-  --color-main-purple: #454ADE;
-  --color-blue1: #3464B6;
-  --color-blue2: #2D579F;
-  --color-blue4: #24457F;
-  --color-blue5: #157efb;
-  --color-blue6: #6640f4;
-  --color-blue7: #8169f1;
-  --color-blue-l: #0066ff;
-  --color-blue-l2: #0066ff;
-  --color-lightBlue: #15f1ff;
-  --color-darkBlue: #010049;
-  --color-darkBlue2: #1f227d;
+  --color-main: #1d63d8;
+  --color-primary: #2b68e0;
+  --color-secondary: #69c7ff;
+  --color-main-purple: #4a69d5;
+  --color-blue1: #2d5fb3;
+  --color-blue2: #1f417d;
+  --color-blue4: #163a68;
+  --color-blue5: #2d6cdf;
+  --color-blue6: #58a7ff;
+  --color-blue7: #8fc5ff;
+  --color-blue-l: #3f88ff;
+  --color-blue-l2: #6fbeff;
+  --color-lightBlue: #a5dcff;
+  --color-darkBlue: #10284a;
+  --color-darkBlue2: #132d57;
   --color-orange1: #ff7a41;
   --color-orange2: #f6c463;
   --color-orange3: #f9a41f;
@@ -91,7 +91,7 @@ TABLE OF CONTENTS:-
   --color-yellowGreen: #cef54b;
   --color-gray: #eef4f8;
   --color-gray2: #f0eff5;
-  --color-main-grad: linear-gradient(to right, #0c3df4 0%, #02b5ff 100%);
+  --color-main-grad: linear-gradient(to right, #163a68 0%, #2d6cdf 42%, #6fbeff 100%);
 }
 
 .color-main {
@@ -458,6 +458,16 @@ body {
   line-height: 1.5;
   direction: rtl;
   font-feature-settings: "ss01";
+}
+
+html[dir="ltr"] body {
+  direction: ltr;
+  font-family: "Inter", sans-serif;
+}
+
+html[dir="rtl"] body {
+  direction: rtl;
+  font-family: "Vazirmatn", sans-serif;
 }
 
 body.style-6 {
@@ -1857,7 +1867,9 @@ small.text {
 
 .butn.dark-butn,
 .btn.dark-butn {
-  background: #000;
+  background: var(--color-blue2);
+  -webkit-box-shadow: 0 10px 20px rgba(31, 65, 125, 0.25);
+  box-shadow: 0 10px 20px rgba(31, 65, 125, 0.25);
 }
 
 .butn.dark-butn span,
@@ -1865,6 +1877,11 @@ small.text {
 .btn.dark-butn span,
 .btn.dark-butn small {
   color: #fff;
+}
+
+.butn.dark-butn:hover,
+.btn.dark-butn:hover {
+  background: var(--color-blue4);
 }
 
 .butn.butn-blue6,
@@ -3753,7 +3770,7 @@ header.style-2 .content .brands {
 }
 
 header.style-3 {
-  background-color: var(--color-blue2);
+  background: linear-gradient(135deg, var(--color-blue4) 0%, var(--color-blue2) 50%, var(--color-blue1) 100%);
   position: relative;
   padding: 100px 0 30px;
 }
