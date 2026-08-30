@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="Hiwa Pardaz Atlas" />
+    <meta name="description" content="HIWA Magazine Detail" />
+    <title>مجله هیوا | مقاله</title>
+    <link rel="shortcut icon" href="assets/img/logo.png" title="Favicon" sizes="16x16" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/lib/all.min.css" />
+    <link rel="stylesheet" href="assets/css/lib/animate.css" />
+    <link rel="stylesheet" href="assets/css/lib/jquery.fancybox.css" />
+    <link rel="stylesheet" href="assets/css/lib/lity.css" />
+    <link rel="stylesheet" href="assets/css/lib/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            direction: rtl;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fb;
+            color: #1b2430;
+        }
+
+        .magazine-detail-page {
+            padding: 180px 0 100px;
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.9), rgba(245,247,251,0.95)),
+                url('assets/img/0011.png') center/cover no-repeat;
+        }
+
+        .magazine-detail-page .article-shell {
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+            border: 1px solid rgba(17, 29, 58, 0.06);
+        }
+
+        .magazine-detail-page .article-cover {
+            width: 100%;
+            height: 420px;
+            display: block;
+            overflow: hidden;
+            background: #eef3ff;
+        }
+
+        .magazine-detail-page .article-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .magazine-detail-page .article-content {
+            padding: 42px 38px 52px;
+        }
+
+        .magazine-detail-page .article-tag {
+            display: inline-block;
+            padding: 7px 14px;
+            border-radius: 999px;
+            background: rgba(0, 102, 255, 0.10);
+            color: #2357cc;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            margin-bottom: 18px;
+        }
+
+        .magazine-detail-page .article-title {
+            font-size: clamp(2rem, 2vw + 1rem, 3rem);
+            line-height: 1.6;
+            margin-bottom: 18px;
+            color: #101827;
+            font-weight: 800;
+        }
+
+        .magazine-detail-page .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 26px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .magazine-detail-page .article-body {
+            color: #334155;
+            font-size: 1.06rem;
+            line-height: 2.2;
+        }
+
+        .magazine-detail-page .article-body p {
+            margin-bottom: 1.2rem;
+        }
+
+        .magazine-detail-page .article-body h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin: 28px 0 12px;
+            color: #0f172a;
+        }
+
+        .magazine-detail-page .article-body ul {
+            padding-right: 22px;
+            margin: 20px 0 24px;
+        }
+
+        .magazine-detail-page .article-body li {
+            margin-bottom: 10px;
+            line-height: 1.9;
+        }
+
+        .magazine-detail-page .article-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 30px;
+        }
+
+        .magazine-detail-page .btn {
+            padding: 12px 24px;
+            border-radius: 999px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .magazine-detail-page .btn-primary {
+            background: #0066ff;
+            border-color: #0066ff;
+            color: #fff;
+        }
+
+        .magazine-detail-page .btn-light {
+            background: #f5f7fb;
+            border: 1px solid #dfe7f5;
+            color: #1e293b;
+        }
+
+        @media (max-width: 767px) {
+            .magazine-detail-page {
+                padding-top: 120px;
+            }
+
+            .magazine-detail-page .article-content {
+                padding: 24px 20px 32px;
+            }
+
+            .magazine-detail-page .article-cover {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div w3-include-html="navbar.html"></div>
+
+    <main class="magazine-detail-page">
+        <div class="container">
+            <div class="mb-4">
+                <a href="index.html" class="text-muted text-decoration-none fw-bold">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                    بازگشت به مجله هیوا
+                </a>
+            </div>
+
+            <article class="article-shell">
+                <div class="article-cover">
+                    <img id="articleImage" src="assets/img/blog/6.png" alt="">
+                </div>
+                <div class="article-content">
+                    <div id="articleTag" class="article-tag">هوش مصنوعی</div>
+                    <h1 id="articleTitle" class="article-title">عنوان مقاله</h1>
+                    <div class="article-meta">
+                        <span id="articleDate">امروز</span>
+                        <span id="articleAuthor">توسط تیم هیوا</span>
+                        <span id="articleReadTime">۵ دقیقه مطالعه</span>
+                    </div>
+                    <div id="articleBody" class="article-body"></div>
+
+                    <div class="article-actions">
+                        <a href="p-contact.html" class="btn btn-primary">درخواست مشاوره</a>
+                        <a href="index.html" class="btn btn-light">بازگشت به صفحه اصلی</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <div w3-include-html="footer.html"></div>
+
+    <script src="assets/js/include.js"></script>
+    <script>
+        const articles = {
+            'ai-business': {
+                image: 'assets/img/blog/6.png',
+                tag: 'هوش مصنوعی',
+                title: 'هوش مصنوعی در کسب‌وکارهای دیجیتال؛ از ابزارهای ساده تا تصمیم‌گیری هوشمند',
+                date: 'امروز',
+                author: 'توسط تیم هیوا',
+                readTime: '۵ دقیقه مطالعه',
+                content: [
+                    'هوش مصنوعی دیگر فقط یک واژه‌ی تکنولوژیک برای شرکت‌های بزرگ نیست. امروزه ابزارهای مبتنی بر AI برای تولید محتوا، تحلیل داده، پاسخ‌گویی به مشتریان و حتی پیش‌بینی رفتار بازار، به بخشی از برنامه‌ریزی کسب‌وکارهای مدرن تبدیل شده‌اند.',
+                    'برای بسیاری از برندها، تفاوت اصلی در این است که AI را به‌عنوان ابزار صرفاً اتوماسیون ببینند یا به‌عنوان موتور تصمیم‌گیری همراهِ تیم. در مدل دوم، داده‌ها با هدف واقعی ترکیب می‌شوند: درک بهتر رفتار مخاطب، سرعت بیشتر در تولید و کاهش خطاهای انسانی در تصمیم‌های تکراری.',
+                    '<h3>AI به چه شکلی در رشد کسب‌وکار نقش دارد؟</h3>',
+                    'در مرحله اول، AI به شما کمک می‌کند تا حجم وسیعی از داده‌ها را سریع‌تر تحلیل کنید. در مرحله دوم، الگوهای رفتاری را کشف کرده و توصیه‌های کاربردی برای دیگر بخش‌های برند ارائه می‌دهد. این یعنی تجربه مشتری بهتر، کمپین‌های هدفمندتر و مدیریت منابع انسانی و مالی دقیق‌تر.',
+                    '<h3>چالش اصلی چیست؟</h3>',
+                    'مهم‌ترین مشکل، شروع بدون هدف مشخص یا استفاده‌ی اشتباه از ابزارهای AI است. اگر کسب‌وکار شما بدون تعریف مسئله‌ی روشن و بدون داده‌ی کافی وارد این مسیر شود، نتیجه‌ی آن فقط اتوماسیون ناقص خواهد بود، نه رشد واقعی.',
+                    '<ul><li>شناخت دقیق اهداف کسب‌وکار و ارزش‌محور بودن پروژه</li><li>استفاده از داده‌های واقعی و تمیز برای آموزش و تحلیل</li><li>ترکیب AI با تجربه کاربری واقعی و تیم فروش یا خدمات</li><li>به‌روزرسانی مستمر مدل‌ها و سنجش نتایج</li></ul>',
+                    'شرکت‌هایی که این مسیر را درست می‌گیرند، در کنار سرعت بیشتر، می‌توانند تصمیم‌گیری‌های دقیق‌تر، خدمات شخصی‌سازی‌شده و مسیرهای بازاریابی هوشمندتر داشته باشند. این یعنی AI باید به‌عنوان یک همراه استراتژیک، نه فقط یک ابزار، دیده شود.'
+                ]
+            },
+            'ux-growth': {
+                image: 'assets/img/blog/7.png',
+                tag: 'UX',
+                title: 'طراحی تجربه کاربری که واقعاً فروش می‌کند: از نگاه داده‌ها تا احساس مشتری',
+                date: '۴ روز پیش',
+                author: 'توسط مریم حسینی',
+                readTime: '۶ دقیقه مطالعه',
+                content: [
+                    'تجربه کاربری، فقط زیبایی گرافیک یا ظاهر صفحه نیست. UX در عمل یعنی اینکه کاربر در مسیر خرید، ثبت‌نام، تماس یا درخواست خدمات، با آرامش و اطمینان پیش برود و احساس کند فرایند، برای او ساخته شده است.',
+                    'در بسیاری از کسب‌وکارها، مشکل اصلی در این است که برند روی ظاهر تمرکز می‌کند اما مسیر تصمیم‌گیری مشتری را نادیده می‌گیرد. نتیجه این موضوع، نرخ تبدیل پایین، ترس از اقدام، و کاهش اعتماد به برند است.',
+                    '<h3>UX خوب از کجا شروع می‌شود؟</h3>',
+                    'شروع UX از درک نیاز واقعی کاربران است. یعنی پرسیدن این سوال‌ها: مخاطب چه چیزی می‌خواهد؟ در کدام مرحله از تصمیم‌گیری قرار دارد؟ چه مانع‌هایی در مسیر او وجود دارد؟ هرچه درکِ دقیق‌تر باشد، طراحی هم هدفمندتر و مؤثرتر خواهد بود.',
+                    '<h3>چرا داده‌ها در UX مهم هستند؟</h3>',
+                    'داده‌ها به شما کمک می‌کنند بدانید کدام بخش‌ها از سایت بیشترین تعامل را دارند، در چه نقطه‌ای کاربران کنار می‌کشند، و چه محتوایی بیشتر توجه را جلب می‌کند. این نوع تحلیل‌ها، به تیم طراحی اجازه می‌دهد به‌جای حدس‌زدن، بر اساس رفتار واقعی اقدام کند.',
+                    '<ul><li>کاهش پیچیدگی در مسیر اقدام</li><li>بهره‌گیری از طراحی خوانا و بدون سردرگمی</li><li>ایجاد حس اعتماد و شفافیت در ارائه خدمات</li><li>بهینه‌سازی فرم‌ها و CTAها روی اساس رفتار واقعی</li></ul>',
+                    'وقتی تجربه کاربری درست طراحی شود، فروش تنها یک نتیجه‌ی جانبی نیست؛ بلکه یک نتیجه‌ی طبیعی از وضوح، اعتماد و روانی مسیر مشتری است.'
+                ]
+            },
+            'brand-growth': {
+                image: 'assets/img/blog/8.png',
+                tag: 'رشد',
+                title: 'از برندینگ تا فروش: مدل‌های جدید رشد دیجیتال برای کسب‌وکارهای ایرانی',
+                date: '۲ هفته پیش',
+                author: 'توسط نازنین فرهادی',
+                readTime: '۷ دقیقه مطالعه',
+                content: [
+                    'در بازار امروز، برندینگ تنها یک «ظاهر» نیست؛ بلکه یک ابزار برای ساختن ذهنیت، اعتماد و تمایز در سطح رقباست. کسب‌وکارهای موفق امروز، برند خود را بر پایه‌ی یک پیام واضح، تجربه‌ی مشتری و شیوه‌ی اجرای دقیق می‌سازند.',
+                    'رشد دیجیتال به‌معنای صرفاً افزایش ترافیک نیست. رشد واقعی زمانی اتفاق می‌افتد که ترافیک درست، مخاطب درست و پیام درست به هم برسند. در این مسیر، سئو، محتوای هدفمند، کمپین‌های مؤثر و طراحی مناسب، همگی با هم عمل می‌کنند.',
+                    '<h3>رشد دیجیتال در عمل یعنی چه؟</h3>',
+                    'یعنی هر بخش از برند، از صفحه‌ی اصلی تا فرم تماس و پیام‌های کمپین، به‌صورت یکپارچه روی تجربه‌ی مشتری کار کند. وقتی این هماهنگی وجود داشته باشد، مشتری به‌جای «نگاه کردن» به برند، برای خرید و تعامل با آن آماده می‌شود.',
+                    '<h3>مهم‌ترین حرکت‌ها برای برندهای ایرانی</h3>',
+                    'بسیاری از کسب‌وکارها با وجود خدمات خوب، به‌دلیل نامشخص بودن پیام برند یا ضعف در اجرای دیجیتال، رشد لازم را ندارند. از این‌رو، بازبینی استراتژی برند، شفاف‌سازی ارزش پیشنهادی و طراحی یک تجربه‌ی یکپارچه، به‌جای صرفاً تبلیغ، از اولویت‌های مهم است.',
+                    '<ul><li>تقویت هویت برند با پیام روشن و متمایز</li><li>سازگاری تصویر برند با تجربه واقعی مشتری</li><li>ساختن کمپین‌ها بر اساس نیاز واقعی مخاطب</li><li>بهبود مسیر تبدیل از بازدید تا خرید</li></ul>',
+                    'در نتیجه، رشد برند و فروش در عصر دیجیتال، بیشتر از هر زمان دیگری وابسته به شفافیت، سرعت و انسجام استراتژی است؛ یعنی دیدن برند به‌عنوان یک سیستم زنده و نه یک مجموعه‌ی تصادفی از امکانات.'
+                ]
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const articleId = params.get('id') || 'ai-business';
+        const article = articles[articleId] || articles['ai-business'];
+
+        document.getElementById('articleImage').src = article.image;
+        document.getElementById('articleImage').alt = article.title;
+        document.getElementById('articleTag').textContent = article.tag;
+        document.getElementById('articleTitle').textContent = article.title;
+        document.getElementById('articleDate').textContent = article.date;
+        document.getElementById('articleAuthor').textContent = article.author;
+        document.getElementById('articleReadTime').textContent = article.readTime;
+
+        const bodyEl = document.getElementById('articleBody');
+        bodyEl.innerHTML = article.content.join(' ');
+    </script>
+</body>
+
+</html>

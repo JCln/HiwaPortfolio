@@ -1,6 +1,8 @@
 // -------- set Date --------
 function setYear() {
     const fullYear = document.getElementById('year');
+    if (!fullYear) return;
+
     const date = new Date().getFullYear();
     fullYear.innerHTML = date;
 }
