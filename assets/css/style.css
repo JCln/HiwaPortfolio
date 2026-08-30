@@ -460,6 +460,16 @@ body {
   font-feature-settings: "ss01";
 }
 
+html[dir="ltr"] body {
+  direction: ltr;
+  font-family: "Inter", sans-serif;
+}
+
+html[dir="rtl"] body {
+  direction: rtl;
+  font-family: "Vazirmatn", sans-serif;
+}
+
 body.style-6 {
   padding: 30px 30px 0;
 }

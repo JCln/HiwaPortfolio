@@ -4,16 +4,16 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="info">
-                        <h1 class="h1">
+                        <h1 class="h1" data-i18n="hero.title">
                             <span>هیوا</span>
                             مدرن بمانید
                         </h1>
-                        <p class="p">
+                        <p class="p" data-i18n="hero.subtitle">
                             ما با توسعه، پشتیبانی و مشاوره نرم افزار به شما کمک می کنیم
                         </p>
-                        <h5 class="h5">برای دریافت مشاوره رایگان! <span class="fw-normal ms-1">
-                                با ما تماس بگیرید و یا ایمیل ارسال فرمایید
-                            </span>
+                        <h5 class="h5">
+                            <span data-i18n="hero.cta">برای دریافت مشاوره رایگان!</span>
+                            <span class="fw-normal ms-1" data-i18n="hero.cta.sub">با ما تماس بگیرید و یا ایمیل ارسال فرمایید</span>
                         </h5>
                         <form id="consultation-form" class="form mt-30" action="https://formsubmit.co/ghmantera@gmail.com" method="POST">
                             <input type="hidden" name="_subject" value="درخواست مشاوره جدید از سایت هیوا">
@@ -23,7 +23,7 @@
                             <div class="row gx-3">
                                 <div class="col-6">
                                     <div class="form-group input-with-icon">
-                                        <input type="email" name="email" class="form-control" placeholder="ایمیل شما *" required>
+                                        <input type="email" name="email" class="form-control" data-i18n-placeholder="hero.form.email" placeholder="ایمیل شما *" required>
                                         <span class="input-icon">
                                             <i class="far fa-envelope"></i>
                                         </span>
@@ -32,15 +32,15 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <select name="intent" class="form-select" required>
-                                            <option value="شرکت یا سازمان هستیم" selected>شرکت یا سازمان هستیم</option>
-                                            <option value="پروژه شخصی میخواهم">پروژه شخصی میخواهم</option>
-                                            <option value="درخواست مشاوره دارم">درخواست مشاوره دارم</option>
+                                            <option value="شرکت یا سازمان هستیم" selected data-i18n="hero.form.select.company">شرکت یا سازمان هستیم</option>
+                                            <option value="پروژه شخصی میخواهم" data-i18n="hero.form.select.personal">پروژه شخصی میخواهم</option>
+                                            <option value="درخواست مشاوره دارم" data-i18n="hero.form.select.consult">درخواست مشاوره دارم</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn dark-butn hover-darkBlue rounded-pill w-100 mt-3">
-                                        <span>ثبت درخواست مشاوره</span>
+                                        <span data-i18n="hero.form.submit">ثبت درخواست مشاوره</span>
                                     </button>
                                 </div>
                             </div>
@@ -61,6 +61,11 @@
         const form = document.getElementById('consultation-form');
         if (!form) return;
 
+        const lang = localStorage.getItem('siteLang') || 'fa';
+        const sendingLabel = lang === 'en' ? 'Sending...' : 'در حال ارسال...';
+        const successLabel = lang === 'en' ? 'Your message was sent successfully. We will contact you soon.' : 'پیام شما با موفقیت ارسال شد. با شما تماس خواهیم گرفت.';
+        const errorLabel = lang === 'en' ? 'Sending failed. Please try again.' : 'ارسال پیام ناموفق بود. لطفاً دوباره تلاش کنید.';
+
         form.addEventListener('submit', async function (event) {
             event.preventDefault();
 
@@ -71,7 +76,7 @@
             statusMessage.style.borderRadius = '12px';
 
             button.disabled = true;
-            button.innerHTML = 'در حال ارسال...';
+            button.innerHTML = sendingLabel;
 
             const data = Object.fromEntries(new FormData(form).entries());
             const endpoint = form.action.replace('https://formsubmit.co/', 'https://formsubmit.co/ajax/');
@@ -93,11 +98,11 @@
                 form.reset();
                 form.style.display = 'none';
                 statusMessage.classList.add('alert-success');
-                statusMessage.textContent = 'پیام شما با موفقیت ارسال شد. با شما تماس خواهیم گرفت.';
+                statusMessage.textContent = successLabel;
                 form.insertAdjacentElement('afterend', statusMessage);
             } catch (error) {
                 statusMessage.classList.add('alert-danger');
-                statusMessage.textContent = 'ارسال پیام ناموفق بود. لطفاً دوباره تلاش کنید.';
+                statusMessage.textContent = errorLabel;
                 form.insertAdjacentElement('afterend', statusMessage);
             } finally {
                 button.disabled = false;
