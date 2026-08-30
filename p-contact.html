@@ -66,52 +66,44 @@
                 <div class="content">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
-                            <form action="https://smartinnovates.com/items/iteck/html/contact.php" class="form"
-                                method="post">
+                            <form action="https://formsubmit.co/ghmantera@gmail.com" class="form" method="POST">
+                                <input type="hidden" name="_subject" value="پیام جدید از فرم تماس هیوا">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table">
                                 <p class="text-center text-danger fs-12px mb-30">فیلد های ستاره دار الزامی هستند</p>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group mb-20">
-                                            <input type="text" class="form-control" placeholder="نام *">
+                                            <input type="text" name="name" class="form-control" placeholder="نام *" required>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group mb-20">
-                                            <input type="text" class="form-control" placeholder="ایمیل *">
+                                            <input type="email" name="email" class="form-control" placeholder="ایمیل *" required>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group mb-20">
-                                            <input type="text" class="form-control" placeholder="شماره تماس (اختیاری)">
+                                            <input type="tel" name="phone" class="form-control" placeholder="شماره تماس (اختیاری)">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group mb-20">
-                                            <input type="text" class="form-control" placeholder="وب سایت شما (اختیاری)">
+                                            <input type="text" name="website" class="form-control" placeholder="وب سایت شما (اختیاری)">
                                         </div>
                                     </div>
-                                    <!-- <div class="col-lg-12">
-                                        <div class="form-group mb-20">
-                                            <select class="form-select">
-                                                <option value="" selected>چطور میتونیم کمک کنیم؟</option>
-                                                <option value="">گزینه 1</option>
-                                                <option value="">گزینه 2</option>
-                                            </select>
-                                        </div>
-                                    </div> -->
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <textarea name="textarea" rows="10" class="form-control"
-                                                placeholder="در چه زمینه ای نیاز به همفکری دارید؟ *"></textarea>
+                                            <textarea name="message" rows="10" class="form-control" placeholder="در چه زمینه ای نیاز به همفکری دارید؟ *" required></textarea>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 text-center mt-30 mb-30">
 
                                     </div>
                                     <div class="col-lg-12 text-center">
-                                        <a href="#" class="btn rounded-pill blue5-3Dbutn hover-blue2 sm-butn fw-bold">
+                                        <button type="submit" class="btn rounded-pill blue5-3Dbutn hover-blue2 sm-butn fw-bold">
                                             <span>ثبت درخواست </span>
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             </form>

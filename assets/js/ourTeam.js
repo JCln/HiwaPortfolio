@@ -41,12 +41,14 @@ getTeamMemberHtml = (imgSrc, title, position, linkedIn) => {
     window.onload = initial;
 
     function initial() {
+        const div = document.getElementById('members');
+        if (!div) return;
+
         const teamMembers = users();
 
         for (let index = 0; index < teamMembers.length; index++) {
             let teamMember = teamMembers[index];
             let newMemberElement = getTeamMemberHtml(teamMember.imgSrc, teamMember.title, teamMember.position, teamMember.linkedIn);
-            let div = document.getElementById('members');
             div.insertAdjacentHTML('beforeend', newMemberElement);
         }
     }
